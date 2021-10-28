@@ -1,6 +1,6 @@
 import nunjucks = require('nunjucks');
 import path = require('path');
-import nunjucksAddon from '../libs/nujucksAddon';
+import nunjucksAddon from './nujucksAddon';
 import * as coreTypes from '../types';
 
 export default async (config: coreTypes.config.app, app?: any) => {

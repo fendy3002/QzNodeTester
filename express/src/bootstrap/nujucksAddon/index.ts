@@ -1,0 +1,27 @@
+import * as coreType from '../../types';
+import changeCase from './changeCase';
+import pagination from './pagination';
+import dateFilter from './dateFilter';
+import fromNow from './fromNow';
+import boolean from './boolean';
+import inArr from './inArr';
+import asArr from './asArr';
+import form from './form';
+import propOnly from './propOnly';
+import map from './map';
+import mapToOption from './mapToOption';
+import currencyFormat from './currencyFormat';
+export default (config: coreType.config.app, nunjucksEnv) => {
+    changeCase(config, nunjucksEnv);
+    pagination(config, nunjucksEnv);
+    dateFilter(config, nunjucksEnv);
+    fromNow(config, nunjucksEnv);
+    boolean(config, nunjucksEnv);
+    inArr(config, nunjucksEnv);
+    asArr(config, nunjucksEnv);
+    currencyFormat(config, nunjucksEnv);
+    form(config, nunjucksEnv);
+    propOnly(config, nunjucksEnv);
+    map(config, nunjucksEnv);
+    mapToOption(config, nunjucksEnv);
+};
