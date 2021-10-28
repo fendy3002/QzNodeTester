@@ -1,4 +1,5 @@
-import * as coreType from '../../types';
+import markdown = require('markdown-it');
+
 import changeCase from './changeCase';
 import pagination from './pagination';
 import dateFilter from './dateFilter';
@@ -11,6 +12,9 @@ import propOnly from './propOnly';
 import map from './map';
 import mapToOption from './mapToOption';
 import currencyFormat from './currencyFormat';
+
+import enumList from '../../config/enumList';
+import * as coreType from '../../types';
 export default (config: coreType.config.app, nunjucksEnv) => {
     changeCase(config, nunjucksEnv);
     pagination(config, nunjucksEnv);
@@ -24,4 +28,17 @@ export default (config: coreType.config.app, nunjucksEnv) => {
     propOnly(config, nunjucksEnv);
     map(config, nunjucksEnv);
     mapToOption(config, nunjucksEnv);
+
+    nunjucksEnv.addGlobal("_appName", config.appName);
+    nunjucksEnv.addGlobal("_description", config.appDescription);
+    nunjucksEnv.addGlobal("_env", config.env);
+    nunjucksEnv.addGlobal("_config", config);
+
+    nunjucksEnv.addGlobal("_now", () => {
+        new Date();
+    });
+    nunjucksEnv.addGlobal("_enum", enumList.safe);
+    nunjucksEnv.addGlobal("_markdown", new markdown({
+        breaks: true
+    }));
 };
