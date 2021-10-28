@@ -1,5 +1,4 @@
 import nunjucks from './nunjucks';
-import openid from './openid';
 import redis from './redis';
 import sql from './sql';
 import session from './session';
@@ -15,7 +14,6 @@ export default async (config: coreTypes.config.app, app?: any) => {
             session(config, app)
         ),
         sql(config),
-        openid(config),
         lockable(config),
         log(config),
         superagent(config),

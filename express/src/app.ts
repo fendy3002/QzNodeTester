@@ -4,7 +4,6 @@ import cookieParser = require('cookie-parser');
 import path = require('path');
 import routes from './routes';
 import configRaw from './config';
-import initData from './initData';
 import bootstrap from './bootstrap';
 
 const init = async () => {
@@ -19,7 +18,6 @@ const init = async () => {
 
     app.use(express.static(path.resolve(__dirname, "..", "public")));
     app.use(await routes(app, config));
-    await initData(config)();
 
     return {
         app: app
