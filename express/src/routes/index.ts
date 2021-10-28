@@ -15,8 +15,7 @@ let routes = async (app, config: types.config.app) => {
     router.use(await init(config));
     router.use(await healthcheck({
         check: {
-            mysql: async (req, res) => { return await req.sqldb.authenticate(); },
-            mongo: async (req, res) => { return await req.mongo.admin().ping(); }
+            mysql: async (req, res) => { return await req.sql("default").authenticate(); },
         },
         checkTimeout: 1000
     }));
