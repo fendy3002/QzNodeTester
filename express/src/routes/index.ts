@@ -20,12 +20,6 @@ let routes = async (app, config: types.config.app) => {
         checkTimeout: 1000
     }));
 
-    // web routes
-    router.use(webErrorHandler);
-    router.use((req, res, next) => {
-        return res.render("error/404.html");
-    });
-
     // api routes
     router.use("/api/*", apiErrorHandler);
     router.use("/api/*", (req, res, next) => {
@@ -33,6 +27,16 @@ let routes = async (app, config: types.config.app) => {
             message: "Not found"
         })
     });
+
+    // static routes
+    router.use("/js/*", (req, res) => {
+        return res.status(404).end();
+    });
+    // web routes
+    router.use("/*", (req, res) => {
+        return res.status(200).render("index.html");
+    });
+    router.use(webErrorHandler);
     return router;
 };
 

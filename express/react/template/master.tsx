@@ -5,7 +5,9 @@ let { observer, inject } = mobxReact;
 
 class Master extends React.Component {
     render() {
-        return <></>;
+        return <>
+            My App
+        </>;
     }
 };
 

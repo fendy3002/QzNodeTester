@@ -8,5 +8,6 @@ export default class store {
         });
         makeObservable(this);
     }
-    
+    @observable
+    data = [];
 };

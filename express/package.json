@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "react:compile-dev": "webpack --mode=development --config webpack.dev.js --watch"
+  },
   "dependencies": {
+    "@babel/core": "^7.16.0",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-decorators": "^7.15.8",
     "@babel/plugin-proposal-object-rest-spread": "^7.15.6",

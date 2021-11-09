@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/fendy/project2/QzNodeTester/express/storage/.9d3dbf40f419d01e193ec9a5a8566fdbfb5b240e-audit.json",
+    "files": [
+        {
+            "date": 1636448345649,
+            "name": "/home/fendy/project2/QzNodeTester/express/storage/error-2021-11-09.log",
+            "hash": "fda01baf5511218694875fa9790be7f4"
+        }
+    ]
+}
