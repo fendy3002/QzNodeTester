@@ -10,7 +10,6 @@ export default (config: types.config.app) => (req, res, next) => {
     req.fullHostUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     req.config = config;
     for (let key of [
-        "nunjucks",
         "redis",
         "sql",
         "session",

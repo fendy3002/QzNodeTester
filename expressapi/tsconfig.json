@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "allowJs": false,
+        "declaration": false,
+        "lib": [
+            "es5",
+            "es6",
+            "dom"
+        ],
+        "skipLibCheck": true,
+        "jsx": "react",
+        "outDir": "dist",
+        "experimentalDecorators": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
